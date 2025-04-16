@@ -6,7 +6,7 @@ The codebase provides training, inference, and training dataset construction cod
 In addition, the codebase provides scripts that automate the operation of Blender to generate multi-angle 2D mapping masks.
 
 A synthetic strategy code is also provided here which generates annotation files while synthesising X-ray security images.
-![image]()
+![image](https://github.com/lz1054864168/MAXSyn/blob/main/code/IMG/github.png)
 # Environment Preparation
 All the code packages that need to be installed are listed in the Pix2Pix-XG.yaml.
 
