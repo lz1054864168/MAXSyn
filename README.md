@@ -9,7 +9,8 @@ A synthetic strategy code is also provided here which generates annotation files
 
 ![image](https://github.com/lz1054864168/MAXSyn/blob/main/code/IMG/github.png)
 
-# Requirements
+# Pix2Pix-XG Generative Model
+## Requirements
 First clone this repository:
 ```
 git clone https://github.com/lz1054864168/MAXSyn.git
@@ -20,8 +21,8 @@ and install dependencies:
 
 `conda env create -f Pix2Pix-XG.yml -n Pix2Pix-XG`
 
-# Training
-## Dataset
+## Training
+### Dataset
 The combine_A_and_B.py in the folder Datasets can be used for training dataset construction by running the code as follows:
 
 ` python ./datasets/combine_A_and_B.py  --fold_A  .\datasets\datasetA  --fold_B .\datasets\datasetB  --fold_AB  .\datasets\combinAB  --no_multip
@@ -30,21 +31,21 @@ rocessing
 
 In the B to A task, `.\datasets\datasetA` is the target image (X-ray image) path, `.\datasets\datasetB` is the condition image (mask) path.
 
-## Weight
-If you need download the weight from this link:
+### Weight
+You need download the weight from this link:
 
 `https://zenodo.org/records/10065825/files/facades_BA.zip?download=1`
 
 Put weight files into the `MAXsyn/code/models`.
 
-## Run
+### Run
 For visualize intermediate results during the training process, you should run:
 
 `python -m visdom.server -pory 8091`
 
 Train your own model
 
-`python train.py --name TASK --model atme --batch_size 8 --direction BtoA --dataroot ./datasets/yourdate --gpu_ids 0,1 --display_port 8091`
+`python train.py --name TASK --model atme --batch_size 8 --direction BtoA --dataroot ./datasets/yourdata --gpu_ids 0,1 --display_port 8091`
 
 TASK is the project name.
 
@@ -53,12 +54,50 @@ For `--dataroot ./datasets/yourdate`, folder `yourdata` should contain the train
 For `--display_port 8091`, `8091` is visualize host.
 
 
-# Evaluation
+## Evaluation
+Test your model, just run
+```
+ python test.py --name fine3  --model atme --direction BtoA --dataroot ./datasets/yourdata
+```
+The results are saved in `./results/TASK`
 
+# Blender
+The Blender platform is used to generate a multi-view mapping of the 3D model.
+## Install
+Download the installation package from `https://www.blender.org/download/`. We use the Blender v2.79b.
+## Run
+windows:
+```
+"C:\Program Files\Blender Foundation\Blender\blender.exe" phong.blend --background --python phong.py -- .\\single_off_samples\\hammer.off .\\single_samples_MV
+```
+ubuntu:
+```
+blender phong.blend --background --python phong.py -- ./single_off_samples/hammer.off ./single_samples_MV
+```
+## Mask Reconstruction
+Rebuild the mask based on the mapping constructed by Blender.
+```
+cd MAXSyn/Blender
+python mask.py
+```
+As shown in the table, the semantic segmentation follows the RGB pixel encoding standard.
 
+| Categories  | Pixel Encoding | 
+|-------------|----------------|
+| Gun         | (255, 0, 0)    | 
+| Knife       | (0, 0, 255)    |
+| Wrench      | (200, 100, 200)| 
+| Pliers      | (0, 255, 0)    |
+| Scissors    | (255, 0, 255)  | 
+| Hammer      | (0, 200, 255)  | 
+| Fork        | (255, 255, 0)  |
+| Exploder    | (255, 200, 200)| 
+| Firecracker | (100, 255, 100)| 
+| Dynamite    | (255, 200, 100)| 
 
+# Synthesis
 
-
+# Citation
 
 
 
