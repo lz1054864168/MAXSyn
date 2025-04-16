@@ -1,5 +1,6 @@
 # MAXSyn
 MAXSyn is the multi-view prohibited item X-ray security image synthetic dataset. This codebase is serve as MAXSyn generation.
+
 ![image](https://github.com/lz1054864168/MAXSyn/blob/main/code/IMG/github.png)
 # Description
 The codebase provides training, inference, and training dataset construction code for Pix2Pix-XG. The Pix2Pix-XG is used to generate the X-ray prohitbit item with mask as the input condition. 
@@ -108,13 +109,14 @@ Multiple image synthesis
 cd MAXSyn/Synthesis
 python Syn2.py
 ```
+The synthesis process generates annotation files simultaneously.
 
 # Citation
 ```
 @misc{zhuo_2025_15221190,
 	author= {Zhuo Li and Caixia Liu},
 	note = {\url{https://doi.org/10.5281/zenodo.15221190}},
-	title = {Multi-view Prohibited Item X-ray Security Image	Synthetic Dataset},
+	title = {Multi-view Prohibited Item X-ray Security Image Synthetic Dataset},
 	month = apr,
 	year  = 2025,
 	publisher = {Zenodo},
@@ -124,7 +126,8 @@ python Syn2.py
 # Acknowledgement
 In this project, we reimplemented Pix2Pix-XG on PyTorch based on [ATME.pytorch](https://github.com/DLR-MI/atm) and [Feature Frequency Loss](https://github.com/EndlessSora/focal-frequency-loss) .
 
-Blender Scripts based on [off](https://github.com/zeaggler/ModelNet_Blender_OFF2Multiview)
+Blender Scripts based on [ModelNet_Blender_OFF2Multiview](https://github.com/zeaggler/ModelNet_Blender_OFF2Multiview).
+
 
 
 
