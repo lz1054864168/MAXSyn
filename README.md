@@ -1,4 +1,9 @@
 # MAXSyn
+MAXSyn is the multi-view prohibited item X-ray security image synthetic dataset. This codebase is serve as MAXSyn generation.
+
+
+![image](https://github.com/lz1054864168/MAXSyn/blob/main/code/IMG/github.png)
+
 * [MAXSyn](#maxsyn)
 * [Description](#description)
 * [Pix2Pix\-XG Generative Model](#pix2pix-xg-generative-model)
@@ -16,9 +21,8 @@
   * [Run](#run-2)
 * [Citation](#citation)
 * [Acknowledgement](#acknowledgement)
-MAXSyn is the multi-view prohibited item X-ray security image synthetic dataset. This codebase is serve as MAXSyn generation.
 
-![image](https://github.com/lz1054864168/MAXSyn/blob/main/code/IMG/github.png)
+
 # Description
 The codebase provides training, inference, and training dataset construction code for Pix2Pix-XG. The Pix2Pix-XG is used to generate the X-ray prohitbit item with mask as the input condition. 
 
