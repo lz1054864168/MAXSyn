@@ -2,7 +2,7 @@
 MAXSyn is the multi-view prohibited item X-ray security image synthetic dataset. This codebase is serve as MAXSyn generation.
 
 
-![image](https://github.com/lz1054864168/MAXSyn/blob/main/code/IMG/github.png)
+![image](https://github.com/lz1054864168/MAXSyn/blob/main/code/IMG/github1.png)
 
 * [MAXSyn](#maxsyn)
 * [Description](#description)
@@ -119,6 +119,7 @@ As shown in the table, the semantic segmentation follows the RGB pixel encoding 
 # Synthesis
 We provide two strategies for image synthesis.
 
+![image](https://github.com/lz1054864168/MAXSyn/blob/main/code/IMG/github2.png)
 ## Run
 Signal image synthesis
 ```
